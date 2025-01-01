@@ -27,21 +27,6 @@ export default function Navbar() {
   return (
     <header className="bg-red-500 text-white sticky top-0 z-50 shadow-md">
       <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
-        {/* Logo / Brand Name */}
-        <div className="text-xl font-bold flex items-center space-x-2">
-          {/* Using next/image for the logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/logo.png" // Ensure you have a logo.png in your public directory
-              alt="Alvin & Sincaplar Logo"
-              width={40}
-              height={40}
-              className="h-6 w-6"
-            />
-            <span className="ml-2">Alvin &amp; Sincaplar</span>
-          </Link>
-        </div>
-
         {/* Desktop Menu (hidden on small screens) */}
         <nav className="hidden sm:flex space-x-6 text-sm items-center">
           {navLinks.map((item) => (
