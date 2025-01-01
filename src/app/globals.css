@@ -1,21 +1,24 @@
+/* app/globals.css */
+
+/* Önce import yap */
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
+
+/* Sonra Tailwind direktifleri */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Diğer global kurallar */
+html, body {
+  font-family: 'Balsamiq Sans', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Dark modda body için özel bir arka plan istersen */
+@layer base {
+  body {
+    @apply bg-white text-gray-900 transition-colors;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
 }
