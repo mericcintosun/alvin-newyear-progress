@@ -63,7 +63,7 @@ export default function Iletisim() {
     <>
       <div>
         <ReCAPTCHA
-          sitekey="YOUR_RECAPTCHA_SITE_KEY" // Kendi reCAPTCHA site anahtarınızı buraya ekleyin
+          sitekey="6LfTsKsqAAAAAOsbyL-15_5T8DJglN504hMrE4BV" 
           onChange={handleCaptchaChange}
         />
       </div>
@@ -175,7 +175,7 @@ export default function Iletisim() {
 
                 <div>
                   <ReCAPTCHA
-                    sitekey="YOUR_RECAPTCHA_SITE_KEY" // Kendi reCAPTCHA site anahtarınızı buraya ekleyin
+                    sitekey="6LfTsKsqAAAAAOsbyL-15_5T8DJglN504hMrE4BV" // Kendi reCAPTCHA site anahtarınızı buraya ekleyin
                     onChange={handleCaptchaChange}
                   />
                 </div>

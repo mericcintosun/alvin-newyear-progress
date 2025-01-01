@@ -3,7 +3,6 @@ import nodemailer from 'nodemailer';
 export async function POST(request) {
   const { name, email, message, captcha } = await request.json();
 
-  // reCAPTCHA doğrulaması
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
   const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`;
 
