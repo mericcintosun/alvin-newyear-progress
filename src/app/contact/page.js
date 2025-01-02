@@ -74,10 +74,10 @@ export default function Iletisim() {
               <li className="flex items-center">
                 <FaEnvelope className="h-6 w-6 text-red-500 mr-2" />
                 <a
-                  href="mailto:meric@example.com" // Kendi e-posta adresinizi buraya ekleyin
+                  href="mailto:mericcintosunn@gmail.com" // Kendi e-posta adresinizi buraya ekleyin
                   className="text-gray-600 dark:text-gray-300 hover:text-yellow-200 transition-colors"
                 >
-                  meric@example.com
+                  mericcintosunn@gmail.com
                 </a>
               </li>
               {/* Telefon */}
