@@ -1,0 +1,85 @@
+{
+  "home": "Anasayfa",
+  "about": "Proje Hakkında",
+  "contact": "İletişim",
+  "day": "Gündüz",
+  "night": "Gece",
+  "project_description": "Alvin ve Sincaplar Evreni projesi, kullanıcılarına eğlenceli ve etkileşimli bir deneyim sunmayı amaçlayan bir platformdur. Proje, modern web teknolojilerini kullanarak dinamik ve kullanıcı dostu bir arayüz sağlamaktadır.",
+  "features": "Projenin Renkli Özellikleri",
+  "interactive_journey": "Etkileşimli Yolculuk",
+  "mobile_friendly": "Mobil Dostu Tasarım",
+  "fast_performance": "Hızlı ve Akıcı",
+  "secure_infrastructure": "Güvenli Altyapı",
+  "join_adventure": "Maceramıza Katıl",
+  "open_source": "Açık Kaynak Macerası",
+  "developed_by": "Geliştirici",
+  "road_description": "Alvin'in yolculuğunda şu ana kadar kat ettiği ilerleme:",
+  "current_progress": "Mevcut İlerleme",
+  "remaining_hours": "Kalan Saat",
+  "total_hours": "Toplam Saat",
+  "home_message": "Yol da çok uzun, aman ya!",
+  "love": "♥️",
+  "created_by": "🧑‍💻 Meriç Cintosun'un Yaratımı",
+  "about_project": "🌟 Proje Hakkında",
+
+  "about_page": {
+    "title": "Proje Hakkında",
+    "purpose_title": "Maceranın Amacı",
+    "purpose_description": "Alvin ve Sincaplar Evreni, kullanıcılarına renkli ve interaktif bir macera sunmayı hedefleyen eğlenceli bir platformdur. Projemiz, modern web teknolojilerini kullanarak dinamik ve kullanıcı dostu bir arayüzle Alvin'in serüvenini keyifle takip etmenizi sağlar.",
+    "technologies_title": "Kullanılan Süper Teknolojiler",
+    "technologies_list": [
+      "Next.js 15 – Alvin'in hızla koştuğu teknolojik altyapı",
+      "React – Dinamik ve interaktif kullanıcı deneyimi",
+      "Tailwind CSS – Renkli ve esnek tasarımın anahtarı",
+      "Heroicons – Eğlenceli simgelerle dolu bir evren",
+      "Vercel (Deployment) – Alvin'in macerasını dünyaya taşıyan bulut gücü"
+    ],
+    "developer_title": "Geliştirici - Meriç Cintosun",
+    "developer_description": "Alvin ve Sincaplar Evreni, web geliştirme süper kahramanı Meriç Cintosun tarafından tasarlandı. Meriç, kullanıcı deneyimini eğlenceyle buluşturan yaratıcı çözümleriyle tanınır ve Alvin'in macerasını hayata geçirmekte büyük rol oynadı.",
+    "features_title": "Projenin Renkli Özellikleri",
+    "features": [
+      {
+        "feature_title": "Etkileşimli Yolculuk",
+        "feature_description": "Alvin'in adım adım ilerlediği dinamik yolculukla her an yeni deneyimler keşfedin."
+      },
+      {
+        "feature_title": "Mobil Dostu Tasarım",
+        "feature_description": "Alvin her yerde! Tüm cihazlarda sorunsuz çalışan responsive tasarımıyla maceraya her yerden katılın."
+      },
+      {
+        "feature_title": "Hızlı ve Akıcı",
+        "feature_description": "Next.js'in gücüyle Alvin'in macerasını kesintisiz ve hızlı bir şekilde takip edin."
+      },
+      {
+        "feature_title": "Güvenli Altyapı",
+        "feature_description": "Kullanıcı verilerinizi koruyan sağlam güvenlik önlemleriyle güvenli bir deneyim yaşayın."
+      }
+    ],
+    "join_adventure": "Maceramıza Katıl"
+  },
+
+  "info_panel": {
+    "title": "Yolculuk İstatistikleri",
+    "date_range": "1 Ocak 2025 - 31 Ocak 2025",
+    "progress": "İlerleme",
+    "remaining_hours": "Kalan Saat",
+    "total_hours": "Toplam Saat"
+  },
+
+  "contact_page": {
+    "title": "İletişim",
+    "get_in_touch": "Bize Ulaşın",
+    "send_message": "Mesaj Gönderin",
+    "name_label": "İsim",
+    "email_label": "E-posta",
+    "message_label": "Mesaj",
+    "send_button": "Gönder",
+    "success_message": "Mesajınız başarıyla gönderildi!",
+    "error_message": "Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.",
+    "contact_info_title": "Bize Ulaşın",
+    "contact_info_email": "mericcintosunn@gmail.com",
+    "contact_info_phone": "+90 530 954 7890",
+    "contact_info_address": "İstanbul, Türkiye",
+    "recaptcha_label": "reCAPTCHA doğrulaması gereklidir."
+  }
+}

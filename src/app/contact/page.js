@@ -3,8 +3,10 @@
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function Iletisim() {
+  const { t } = useTranslation('common'); // 'common' namespace kullanıyoruz
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -64,14 +66,14 @@ export default function Iletisim() {
     <main className="min-h-screen bg-gray-100 dark:bg-gray-900 py-10">
       <div className="mx-auto max-w-4xl px-4">
         <h1 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-6">
-          İletişim
+          {t("contact_page.title")}
         </h1>
 
         <div className="flex flex-col md:flex-row md:space-x-8">
           {/* İletişim Bilgileri */}
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200 mb-4">
-              Bize Ulaşın
+              {t("contact_page.get_in_touch")}
             </h2>
             <ul className="space-y-4">
               {/* E-posta */}
@@ -81,24 +83,24 @@ export default function Iletisim() {
                   href="mailto:mericcintosunn@gmail.com"
                   className="text-gray-600 dark:text-gray-300 hover:text-yellow-200 transition-colors"
                 >
-                  mericcintosunn@gmail.com
+                  {t("contact_page.contact_info_email")}
                 </a>
               </li>
               {/* Telefon */}
               <li className="flex items-center">
                 <FaPhone className="h-6 w-6 text-red-500 mr-2" />
                 <a
-                  href="tel:+905555555555"
+                  href="tel:+905309547890"
                   className="text-gray-600 dark:text-gray-300 hover:text-yellow-200 transition-colors"
                 >
-                  +90 555 555 55 55
+                  {t("contact_page.contact_info_phone")}
                 </a>
               </li>
               {/* Adres */}
               <li className="flex items-center">
                 <FaMapMarkerAlt className="h-6 w-6 text-red-500 mr-2" />
                 <span className="text-gray-600 dark:text-gray-300">
-                  İstanbul, Türkiye
+                  {t("contact_page.contact_info_address")}
                 </span>
               </li>
             </ul>
@@ -107,7 +109,7 @@ export default function Iletisim() {
           {/* İletişim Formu */}
           <div className="md:w-1/2">
             <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200 mb-4">
-              Mesaj Gönderin
+              {t("contact_page.send_message")}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* İsim */}
@@ -116,7 +118,7 @@ export default function Iletisim() {
                   htmlFor="name"
                   className="block text-gray-700 dark:text-gray-200 mb-1"
                 >
-                  İsim
+                  {t("contact_page.name_label")}
                 </label>
                 <input
                   type="text"
@@ -135,7 +137,7 @@ export default function Iletisim() {
                   htmlFor="email"
                   className="block text-gray-700 dark:text-gray-200 mb-1"
                 >
-                  E-posta
+                  {t("contact_page.email_label")}
                 </label>
                 <input
                   type="email"
@@ -154,7 +156,7 @@ export default function Iletisim() {
                   htmlFor="message"
                   className="block text-gray-700 dark:text-gray-200 mb-1"
                 >
-                  Mesaj
+                  {t("contact_page.message_label")}
                 </label>
                 <textarea
                   id="message"
@@ -181,18 +183,16 @@ export default function Iletisim() {
                   type="submit"
                   className="w-full bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500"
                 >
-                  Gönder
+                  {t("contact_page.send_button")}
                 </button>
               </div>
 
               {/* Form Durumu Mesajları */}
               {formStatus === "success" && (
-                <p className="text-green-500">Mesajınız başarıyla gönderildi!</p>
+                <p className="text-green-500">{t("contact_page.success_message")}</p>
               )}
               {formStatus === "error" && (
-                <p className="text-red-500">
-                  Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.
-                </p>
+                <p className="text-red-500">{t("contact_page.error_message")}</p>
               )}
             </form>
           </div>

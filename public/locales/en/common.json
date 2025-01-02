@@ -1,0 +1,84 @@
+{
+  "home": "Home",
+  "about": "About Project",
+  "contact": "Contact",
+  "day": "Day",
+  "night": "Night",
+  "project_description": "The Alvin and Squirrel Universe project aims to provide users with a fun and interactive experience. The project offers a dynamic and user-friendly interface using modern web technologies.",
+  "features": "Colorful Project Features",
+  "interactive_journey": "Interactive Journey",
+  "mobile_friendly": "Mobile-Friendly Design",
+  "fast_performance": "Fast and Smooth",
+  "secure_infrastructure": "Secure Infrastructure",
+  "join_adventure": "Join Our Adventure",
+  "open_source": "Open Source Adventure",
+  "developed_by": "Developed by",
+  "road_description": "Alvin's progress in his journey so far:",
+  "current_progress": "Current Progress",
+  "remaining_hours": "Remaining Hours",
+  "total_hours": "Total Hours",
+  "home_message": "The road is long, oh no!",
+  "love": "♥️",
+  "created_by": "🧑‍💻 Created by Meriç Cintosun",
+  "about_project": "🌟 About Project",
+
+  "about_page": {
+    "title": "About Project",
+    "purpose_title": "Purpose of the Adventure",
+    "purpose_description": "The Alvin and Squirrel Universe project is a fun platform aiming to provide users with a colorful and interactive adventure. Our project allows you to enjoy Alvin's journey with a dynamic and user-friendly interface using modern web technologies.",
+    "technologies_title": "Super Technologies Used",
+    "technologies_list": [
+      "Next.js 15 – The technological infrastructure where Alvin runs swiftly",
+      "React – Dynamic and interactive user experience",
+      "Tailwind CSS – The key to colorful and flexible design",
+      "Heroicons – A universe full of fun icons",
+      "Vercel (Deployment) – The cloud power that brings Alvin's adventure to the world"
+    ],
+    "developer_title": "Developer - Meriç Cintosun",
+    "developer_description": "The Alvin and Squirrel Universe project was designed by web development superhero Meriç Cintosun. Meriç is known for creative solutions that blend user experience with fun, playing a major role in bringing Alvin's adventure to life.",
+    "features_title": "Colorful Features of the Project",
+    "features": [
+      {
+        "feature_title": "Interactive Journey",
+        "feature_description": "Discover new experiences at every step with Alvin's dynamic journey."
+      },
+      {
+        "feature_title": "Mobile-Friendly Design",
+        "feature_description": "Alvin is everywhere! Join the adventure from anywhere with a responsive design that works seamlessly on all devices."
+      },
+      {
+        "feature_title": "Fast and Smooth",
+        "feature_description": "Follow Alvin's adventure seamlessly and swiftly powered by Next.js."
+      },
+      {
+        "feature_title": "Secure Infrastructure",
+        "feature_description": "Experience a secure journey with robust security measures protecting your user data."
+      }
+    ],
+    "join_adventure": "Join Our Adventure"
+  },
+
+  "info_panel": {
+    "title": "Journey Statistics",
+    "date_range": "January 1, 2025 - January 31, 2025",
+    "progress": "Progress",
+    "remaining_hours": "Remaining Hours",
+    "total_hours": "Total Hours"
+  },
+  "contact_page": {
+    "title": "Contact",
+    "get_in_touch": "Get in Touch",
+    "send_message": "Send a Message",
+    "name_label": "Name",
+    "email_label": "Email",
+    "message_label": "Message",
+    "send_button": "Send",
+    "success_message": "Your message has been sent successfully!",
+    "error_message": "An error occurred while sending your message. Please try again.",
+    "contact_info_title": "Get in Touch",
+    "contact_info_email": "mericcintosunn@gmail.com",
+    "contact_info_phone": "+90 530 954 7890",
+    "contact_info_address": "Istanbul, Turkey",
+    "recaptcha_label": "reCAPTCHA verification is required."
+  }
+}
