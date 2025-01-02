@@ -1,25 +1,21 @@
-// pages/api/contact.js
-
 import nodemailer from 'nodemailer';
 
 export async function POST(request) {
   try {
     const { name, email, message, recaptchaToken } = await request.json();
 
-    // Basit input validation
+    // 1) Basit input validation
     if (!name || !email || !message || !recaptchaToken) {
       return new Response(
         JSON.stringify({ error: 'Tüm alanları doldurduğunuzdan emin olun.' }),
         {
           status: 400,
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
 
-    // reCAPTCHA doğrulama
+    // 2) reCAPTCHA doğrulama
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
     const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
 
@@ -28,32 +24,32 @@ export async function POST(request) {
 
     if (!verificationData.success) {
       return new Response(
-        JSON.stringify({ error: 'reCAPTCHA doğrulaması başarısız. Lütfen tekrar deneyin.' }),
+        JSON.stringify({
+          error: 'reCAPTCHA doğrulaması başarısız. Lütfen tekrar deneyin.'
+        }),
         {
           status: 400,
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
 
-    // SMTP transportunu yapılandırın
+    // 3) SMTP transportunu yapılandırma (örnek: Gmail üzerinden gönderim)
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: parseInt(process.env.EMAIL_PORT, 10),
-      secure: parseInt(process.env.EMAIL_PORT, 10) === 465, // 465 için true, diğer portlar için false
+      secure: parseInt(process.env.EMAIL_PORT, 10) === 465, // 465 ise true, değilse false
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
 
-    // E-posta içeriğini oluşturun
+    // 4) E-posta içeriğini oluşturun
     const mailOptions = {
-      from: process.env.EMAIL_USER, // Gönderen, SMTP kimliği ile aynı olmalı
-      replyTo: `"${name}" <${email}>`, // Kullanıcının e-posta adresi
-      to: process.env.EMAIL_TO, // Alıcının e-posta adresi
+      from: process.env.EMAIL_USER,        // Gönderen (SMTP kimliği ile aynı)
+      replyTo: `"${name}" <${email}>`,     // Kullanıcının e-postası
+      to: process.env.EMAIL_TO,            // Alıcı (Örn: kendi e-postanız)
       subject: 'Yeni İletişim Mesajı',
       text: `İsim: ${name}\nE-posta: ${email}\n\nMesaj:\n${message}`,
       html: `
@@ -65,27 +61,30 @@ export async function POST(request) {
       `,
     };
 
-    // E-postayı gönder
+    // 5) E-postayı gönder
     await transporter.sendMail(mailOptions);
 
+    // 6) Başarılı cevap
     return new Response(
-      JSON.stringify({ message: 'Mesajınız başarıyla gönderildi.' }),
+      JSON.stringify({
+        success: true,
+        message: 'Mesajınız başarıyla gönderildi.'
+      }),
       {
         status: 200,
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
       }
     );
+
   } catch (error) {
     console.error('E-posta gönderim hatası:', error);
     return new Response(
-      JSON.stringify({ error: 'Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyin.' }),
+      JSON.stringify({
+        error: 'Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyin.'
+      }),
       {
         status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
       }
     );
   }

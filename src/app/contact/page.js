@@ -11,7 +11,8 @@ export default function Iletisim() {
     message: "",
   });
 
-  const [formStatus, setFormStatus] = useState(null); // null, 'success', 'error'
+  // Form durumları: null, 'success', 'error'
+  const [formStatus, setFormStatus] = useState(null);
   const [recaptchaToken, setRecaptchaToken] = useState(null);
 
   const handleRecaptchaChange = (token) => {
@@ -28,30 +29,33 @@ export default function Iletisim() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // reCAPTCHA doğrulanmadıysa hata mesajı ver
     if (!recaptchaToken) {
       setFormStatus("error");
       return;
     }
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, recaptchaToken }),
       });
 
       const data = await response.json();
 
+      // API, { success: true, message: '...' } döndürmeli
       if (response.ok && data.success) {
         setFormStatus("success");
+        // Form alanlarını temizle
         setFormData({ name: "", email: "", message: "" });
         setRecaptchaToken(null);
       } else {
-        throw new Error(data.message || "Form gönderilemedi");
+        throw new Error(data.error || data.message || "Form gönderilemedi");
       }
     } catch (error) {
-      console.error(error);
+      console.error("Form submit error:", error);
       setFormStatus("error");
     }
   };
@@ -74,7 +78,7 @@ export default function Iletisim() {
               <li className="flex items-center">
                 <FaEnvelope className="h-6 w-6 text-red-500 mr-2" />
                 <a
-                  href="mailto:mericcintosunn@gmail.com" // Kendi e-posta adresinizi buraya ekleyin
+                  href="mailto:mericcintosunn@gmail.com"
                   className="text-gray-600 dark:text-gray-300 hover:text-yellow-200 transition-colors"
                 >
                   mericcintosunn@gmail.com
@@ -84,7 +88,7 @@ export default function Iletisim() {
               <li className="flex items-center">
                 <FaPhone className="h-6 w-6 text-red-500 mr-2" />
                 <a
-                  href="tel:+905555555555" // Kendi telefon numaranızı buraya ekleyin
+                  href="tel:+905555555555"
                   className="text-gray-600 dark:text-gray-300 hover:text-yellow-200 transition-colors"
                 >
                   +90 555 555 55 55
@@ -183,9 +187,7 @@ export default function Iletisim() {
 
               {/* Form Durumu Mesajları */}
               {formStatus === "success" && (
-                <p className="text-green-500">
-                  Mesajınız başarıyla gönderildi!
-                </p>
+                <p className="text-green-500">Mesajınız başarıyla gönderildi!</p>
               )}
               {formStatus === "error" && (
                 <p className="text-red-500">
