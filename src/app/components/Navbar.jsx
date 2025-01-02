@@ -27,7 +27,6 @@ export default function Navbar() {
   return (
     <header className="bg-red-500 text-white sticky top-0 z-50 shadow-md">
       <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
-        {/* Desktop Menu (hidden on small screens) */}
         <nav className="hidden sm:flex space-x-6 text-sm items-center">
           {navLinks.map((item) => (
             <Link
