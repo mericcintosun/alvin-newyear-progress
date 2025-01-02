@@ -60,7 +60,7 @@
 
   "info_panel": {
     "title": "Journey Statistics",
-    "date_range": "January 1, 2025 - January 31, 2025",
+    "date_range": "January 1, 2025 - December 31, 2025",
     "progress": "Progress",
     "remaining_hours": "Remaining Hours",
     "total_hours": "Total Hours"
